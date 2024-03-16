@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <mvc:annotation-driven/>
+    <!-- 1.使用注解，扫描项目中的包 -->
+    <context:component-scan base-package="com.yyjccc.memorytrojan.Spring.controller"></context:component-scan>
+
+    <!-- 2.开启注解 -->
+    <mvc:annotation-driven/>
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/*"/>
+            <bean class="com.yyjccc.memorytrojan.Spring.interceptor.MyInterceptor" />
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+    <!-- 3.配置例外：不是让所有的代码都走springmvc的过滤器 -->
+    <!-- 配置静态资源，不被DispatcherServlet处理 -->
+<!--    <mvc:resources location="/images/" mapping="/images/**"/>-->
+<!--    <mvc:resources location="/js/" mapping="/js/**"/>-->
+<!--    <mvc:resources location="/css/" mapping="/css/**"/>-->
+
+    <!-- 4.定义跳转文件的前缀和后缀，视图view的配置 -->
+<!--    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">-->
+<!--        <property name="prefix" value="/WEB-INF/views/"></property>-->
+<!--        <property name="suffix" value=".jsp"></property>-->
+<!--    </bean>-->
+
+</beans>
