@@ -28,5 +28,19 @@
         <artifactId>commons-collections</artifactId>
         <version>3.2.1</version>
     </dependency>
+
+        <dependency>
+            <groupId>com.mchange</groupId>
+            <artifactId>c3p0</artifactId>
+            <version>0.9.5.2</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.yyjccc</groupId>
+            <artifactId>commons-c_chain_Exp</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
 </dependencies>
+
 </project>

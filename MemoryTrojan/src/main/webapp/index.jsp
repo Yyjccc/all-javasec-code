@@ -10,13 +10,9 @@
 <a href="filter.jsp">Filter型内存马</a>
 <a href="sevlet.jsp">Servlet型内存马</a>
 <a href="listener.jsp">Listener型内存马</a>
-
-
-
-
-
 <a href="valve.jsp">Valve型内存马</a>
 <%
+  out.println("x");
 %>
 </body>
 </html>

@@ -17,6 +17,7 @@ import java.nio.file.Paths;
 import java.util.PriorityQueue;
 
 public class Cc4 {
+    public static String loadPath="D:\\coderesp\\java\\learn\\exp\\target\\classes\\org\\example\\test.class";
     public static Object cc4() throws Exception {
         TemplatesImpl templates= new TemplatesImpl();
 
@@ -27,7 +28,7 @@ public class Cc4 {
         Field bytecodefield = tc.getDeclaredField("_bytecodes");
         bytecodefield.setAccessible(true);
         //赋给我们的字节码,二维数组，代码会循环遍历
-        byte[] code= Files.readAllBytes(Paths.get("D:\\coderesp\\java\\learn\\exp\\target\\classes\\org\\example\\test.class"));;
+        byte[] code= Files.readAllBytes(Paths.get(loadPath));
         byte [][]  codes={code};
         bytecodefield.set(templates,codes);
 

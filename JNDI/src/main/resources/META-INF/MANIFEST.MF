@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Mainifest-Version: 1.0
+Main-Class: com.yyjccc.jndi.RMI.exp.clent.EvilServer
+

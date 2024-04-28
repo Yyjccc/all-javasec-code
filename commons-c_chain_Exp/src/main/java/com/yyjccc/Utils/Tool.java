@@ -20,13 +20,7 @@ public  class Tool{
             objectOutputStream.close();
             System.out.println("序列化成功");
         } else if (mode.equals("base64")) {
-            ByteArrayOutputStream byteArrayOut = new ByteArrayOutputStream();
-            ObjectOutputStream objectOut = new ObjectOutputStream(byteArrayOut);
-            objectOut.writeObject(object);
-            objectOut.flush();
-            objectOut.close();
-            byte[] byteArray =byteArrayOut.toByteArray();
-            String base64String=Base64.getEncoder().encodeToString(byteArray);
+            String base64String=serizeWithBase64(object);
             try (BufferedWriter writer = new BufferedWriter(new FileWriter(baseFilepath))) {
                 // 将Base64字符串写入文件
                 writer.write(base64String);
@@ -59,6 +53,18 @@ public  class Tool{
         } else {
             throw new Exception("模式错误");
         }
+    }
+
+
+    public static String serizeWithBase64(Object o) throws IOException {
+        ByteArrayOutputStream byteArrayOut = new ByteArrayOutputStream();
+        ObjectOutputStream objectOut = new ObjectOutputStream(byteArrayOut);
+        objectOut.writeObject(o);
+        objectOut.flush();
+        objectOut.close();
+        byte[] byteArray =byteArrayOut.toByteArray();
+        String base64String=Base64.getEncoder().encodeToString(byteArray);
+        return base64String;
     }
     public static String NofileSerialze() throws Exception {
         if(mode.equals("normal")){
